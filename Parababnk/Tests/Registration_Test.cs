@@ -25,10 +25,9 @@ namespace Parababnk.Tests
             {             
                 Service.StartBrowser(drivers, Appurl);
 
-                Registration_Test t = new Registration_Test();
-                t.RG_TC01_NEG();
-                //RG_TC01_POS();
-               // RG_TC01_NEG();
+                
+                RG_TC01_POS();
+               
             }
         }
     }
