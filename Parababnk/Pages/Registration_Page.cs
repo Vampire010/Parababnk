@@ -13,7 +13,7 @@ namespace Parababnk.Pages
 
     {
 
-
+        
 
         public void RG_TC01_POS()
          {
@@ -31,9 +31,10 @@ namespace Parababnk.Pages
             IWebElement Password = Service.driver.FindElement(By.XPath("//*[@id='customer.password']"));
             IWebElement Confirm_Password = Service.driver.FindElement(By.XPath("//*[@id='repeatedPassword']"));
             IWebElement Register_Button = Service.driver.FindElement(By.XPath("//*[@id='customerForm']/table/tbody/tr[13]/td[2]/input"));
+           
             //Service.driver.
 
-           First_Name.SendKeys("Girish");
+            First_Name.SendKeys("Girish");
             Last_Name.SendKeys("Rathode");
             Address.SendKeys("Church Street,Avennue Parker");
             City.SendKeys("NewYork");
@@ -44,36 +45,31 @@ namespace Parababnk.Pages
             Thread.Sleep(2);
             SSN.SendKeys("SEL120");
             Thread.Sleep(2);
-            Username.SendKeys("Devil_242");
+            Username.SendKeys("Devil_260223");
             Thread.Sleep(2);
-            Password.SendKeys("Devil@24");
+            Password.SendKeys("Devil@260223");
 
-            Confirm_Password.SendKeys("Devil@24");
+            Confirm_Password.SendKeys("Devil@260223");
             Thread.Sleep(2);
             Register_Button.Click();
-
-
+            
+            Thread.Sleep(2);
             String Title= Service.driver.Title;
             if (Title.Equals("ParaBank | Customer Created"))
             {
                 Console.WriteLine("RG_TC01_POS : - Test Passed");
 
             }
-
-
-            Service.driver.Navigate().Refresh();
-
-            Thread.Sleep(5000);
-
-
-            Service.driver.Navigate().Back();
-
-            Thread.Sleep(5000);
-
-            Service.driver.Navigate().Forward();
-
-
-
+           
         }
+
+
+        public void lOGout()
+        {
+            IWebElement Logout = Service.driver.FindElement(By.XPath("//*[@id='leftPanel']/ul/li[8]/a"));
+            Thread.Sleep(5000);
+            Logout.Click();
+        }
+
     }
 }

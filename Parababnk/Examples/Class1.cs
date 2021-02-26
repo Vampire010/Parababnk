@@ -12,7 +12,7 @@ namespace Parababnk.Examples
     {
         IWebDriver driver;
 
-        [Test]
+        //[Test]
         public void Runner()
         {
            driver = new ChromeDriver();

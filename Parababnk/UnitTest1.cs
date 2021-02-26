@@ -10,9 +10,11 @@ namespace Parababnk
     public class Test2s
     {
         IWebDriver driver;
+
      
 
-       [Test]
+
+      [Test]
         public void Test1()
         {
             driver = new ChromeDriver();
