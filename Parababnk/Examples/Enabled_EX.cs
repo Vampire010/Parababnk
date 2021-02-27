@@ -14,7 +14,7 @@ namespace Parababnk.Examples
 
 
 
-        [Test]
+      //  [Test]
         public void Test1()
         {
             driver = new ChromeDriver();
