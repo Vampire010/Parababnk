@@ -8,7 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C2095106-8FE0-4394-9C29-A03FF8B05F94}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		ReportingManager.cs = ReportingManager.cs
 	EndProjectSection
 EndProject
 Global

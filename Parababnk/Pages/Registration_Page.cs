@@ -13,8 +13,6 @@ namespace Parababnk.Pages
 
     {
 
-        
-
         public void RG_TC01_POS()
          {
             IWebElement Reg_Link_Page = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/p[2]/a"));
@@ -45,11 +43,11 @@ namespace Parababnk.Pages
             Thread.Sleep(2);
             SSN.SendKeys("SEL120");
             Thread.Sleep(2);
-            Username.SendKeys("Devil_260223");
+            Username.SendKeys("Devil_2602031");
             Thread.Sleep(2);
-            Password.SendKeys("Devil@260223");
+            Password.SendKeys("Devil@260203");
 
-            Confirm_Password.SendKeys("Devil@260223");
+            Confirm_Password.SendKeys("Devil@260203");
             Thread.Sleep(2);
             Register_Button.Click();
             
@@ -62,7 +60,6 @@ namespace Parababnk.Pages
             }
            
         }
-
 
         public void lOGout()
         {

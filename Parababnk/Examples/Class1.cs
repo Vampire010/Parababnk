@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,10 +13,10 @@ namespace Parababnk.Examples
     {
         IWebDriver driver;
 
-        //[Test]
+     //   [Test]
         public void Runner()
         {
-           driver = new ChromeDriver();
+           driver = new FirefoxDriver();
            driver.Navigate().GoToUrl("https://dev-online.dev.tsretail.co.za/landing");
             Thread.Sleep(10000);
             /*driver.FindElement(By.XPath("/html/body/app-root/div/div/top-navigation/div/div/div/div[1]/div[2]/button-with-notification[2]")).Click();
