@@ -10,11 +10,12 @@ namespace Parababnk.Examples
     {
         IWebDriver driver;
 
-       // [Test]
+       //[Test]
         public void tests()
         {
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("file:///C:/Users/91973/source/repos/Parababnk/Parababnk/Frames_Html/SCENARIO_1.html");
+            
             //Switch to Frame 1
             driver.SwitchTo().Frame(0);
             driver.FindElement(By.Id("Fname1")).SendKeys("Smith");
@@ -26,8 +27,7 @@ namespace Parababnk.Examples
             driver.FindElement(By.Id("Fname2")).SendKeys("John");
 
             //Switch to  Frame 3 *--
-            driver.SwitchTo().DefaultContent();
-           
+            driver.SwitchTo().DefaultContent();           
             driver.SwitchTo().Frame("Frame3");
             driver.FindElement(By.Id("Fname3")).SendKeys("Ken");
 

@@ -10,7 +10,7 @@ namespace Parababnk.Examples
 {
     class Enabled_EX
     {
-       [Test]
+     //  [Test]
         public static void Test1()
         {
 
