@@ -27,15 +27,15 @@ namespace Parababnk.Pages
             IWebElement Password = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[2]/input"));            
             IWebElement Login_Button = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[3]/input"));
            
-            Username.SendKeys("Devil_260223");
+            Username.SendKeys("AL202107");
             test.Log(Status.Pass, "UserName Enterd");
 
-            Password.SendKeys("Devil@260223");
+            Password.SendKeys("Devil@1234");
             test.Log(Status.Pass, "Password Enterd");
 
 
             Login_Button.Click();
-            test.Log(Status.Pass, "Clicking on on Login Button");
+            test.Log(Status.Pass, "Clicking  on Login Button");
 
             rep.Flush();
         }

@@ -18,13 +18,18 @@ namespace Parababnk.Browsersetup
         public static void StartBrowser(string BrowserType,string url)
         {
 
-            test = rep.CreateTest("Login_Test");
+            test = rep.CreateTest("Browser_Test");
 
             if (BrowserType.Equals("Chrome"))
             {
-                test.Log(Status.Pass, "Strting the Chrome Browser");
+                
+                test.Log(Status.Info, "Strting the Chrome Browser");
+
                 Service.driver = new ChromeDriver();
+                
                 test.Log(Status.Pass, "Navigating to URL " + url);
+                
+                
                 driver.Navigate().GoToUrl(url);
             }
 

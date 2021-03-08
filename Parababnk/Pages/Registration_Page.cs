@@ -1,8 +1,10 @@
-﻿using NUnit.Framework;
+﻿using AventStack.ExtentReports;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using Parababnk.Browsersetup;
+using Parababnk.Reports;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,11 +14,18 @@ namespace Parababnk.Pages
     public class Registration_Page 
 
     {
+        static ExtentReports rep = ExtentManager.getInstance();
+        static ExtentTest test;
 
         public void RG_TC01_POS()
          {
+            test = rep.CreateTest("RG_TC01_POS");
+
+            test.Log(Status.Pass, "Parbank Welcome Page Loaded");
             IWebElement Reg_Link_Page = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/p[2]/a"));
             Reg_Link_Page.Click();
+            test.Log(Status.Pass, "Parabank Registartion Page Loaded");
+
             IWebElement First_Name = Service.driver.FindElement(By.XPath("//input[@id='customer.firstName' or @name='customer.firstName']"));
             IWebElement Last_Name = Service.driver.FindElement(By.XPath("//input[@id='customer.lastName' and @name='customer.lastName']"));
             IWebElement Address = Service.driver.FindElement(By.XPath("//input[starts-with(@name,'customer.address.street')]"));
@@ -33,39 +42,65 @@ namespace Parababnk.Pages
             //Service.driver.
 
             First_Name.SendKeys("Girish");
+            test.Log(Status.Pass, " First Name Enterd");
             Last_Name.SendKeys("Rathode");
+            test.Log(Status.Pass, " Last Name Enterd" );
+
             Address.SendKeys("Church Street,Avennue Parker");
+            test.Log(Status.Pass, " Address Enterd" );
+
             City.SendKeys("NewYork");
+            test.Log(Status.Pass, " City Name Enterd" );
+
             State.SendKeys("Albama");
+            test.Log(Status.Pass, " State Name Enterd" );
+
             Thread.Sleep(2);
             Zip_Code.SendKeys("10006");
+            test.Log(Status.Pass, " Zip Code  Enterd" );
+
             Phone.SendKeys("+91987654123");
+            test.Log(Status.Pass, " Phone Number  Enterd" );
             Thread.Sleep(2);
+         
             SSN.SendKeys("SEL120");
+            test.Log(Status.Pass, " SSN Number  Enterd" );
             Thread.Sleep(2);
-            Username.SendKeys("Devil_2602031");
+          
+            Username.SendKeys("Devil_260203008");
+            test.Log(Status.Pass, " USERNAME  Enterd");
             Thread.Sleep(2);
+
             Password.SendKeys("Devil@260203");
+            test.Log(Status.Pass, " PASSWORD  Enterd");
 
             Confirm_Password.SendKeys("Devil@260203");
+            test.Log(Status.Pass, " Confirm_Password  Enterd");
             Thread.Sleep(2);
+
             Register_Button.Click();
             
             Thread.Sleep(2);
             String Title= Service.driver.Title;
             if (Title.Equals("ParaBank | Customer Created"))
             {
-                Console.WriteLine("RG_TC01_POS : - Test Passed");
-
+                test.Log(Status.Pass, "User Successfully Created");
             }
-           
+            else
+            {
+                test.Log(Status.Fail, "User Not Registerd ");
+            }
+
+            rep.Flush();
         }
 
         public void lOGout()
         {
+            test = rep.CreateTest("RG_TC01_POS");
             IWebElement Logout = Service.driver.FindElement(By.XPath("//*[@id='leftPanel']/ul/li[8]/a"));
             Thread.Sleep(5000);
             Logout.Click();
+            test.Log(Status.Pass, "User Loged Out ");
         }
 
     }

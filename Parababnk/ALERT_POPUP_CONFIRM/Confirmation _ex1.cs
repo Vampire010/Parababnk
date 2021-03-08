@@ -20,7 +20,9 @@ namespace Parababnk.ALERT_POPUP_CONFIRM
             // Prints text and closes alert
             Thread.Sleep(5000);
             Console.WriteLine(alert.Text);
-            alert.Accept();
+            //alert.Accept();
+
+            alert.Dismiss();
         }
     }
 }

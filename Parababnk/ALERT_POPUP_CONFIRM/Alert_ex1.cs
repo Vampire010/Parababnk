@@ -16,15 +16,19 @@ namespace Parababnk.ALERT_POPUP_CONFIRM
     class Alert_ex1
     {
         IWebDriver driver;
-        [Test]
+       //[Test]
         public void alertbox()
         {
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("file:///C:/Users/91973/source/repos/Parababnk/Parababnk/Frames_Html/Alert_Popup_box.html");
+            
             IAlert alert = driver.SwitchTo().Alert();
+            
             // Prints text and closes alert
             Thread.Sleep(5000);
+
             Console.WriteLine(alert.Text);
+
             alert.Accept();
 
         }

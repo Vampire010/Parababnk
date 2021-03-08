@@ -9,23 +9,24 @@ using System.Text;
 
 namespace Parababnk.Tests
 {
-
-    [TestFixture]
-    class Login_Test:Login
+    class Smoke_TC
     {
         string Appurl = "https://parabank.parasoft.com";
-       
-    [Test]
-        public void Login_TC01()
+
+      //  [Test]
+        public void TC01()
         {
             String[] Browsers = { "Chrome" };
             foreach (String drivers in Browsers)
             {
                 Service.StartBrowser(drivers, Appurl);
-
-                User_Login();             
+                Registration_Page Rp = new Registration_Page();
+                Rp.RG_TC01_POS();
+                Rp.lOGout();
+                Login lg = new Login();
+                lg.User_Login();
             }
         }
-
     }
+
 }

@@ -1,29 +1,27 @@
-﻿using AventStack.ExtentReports;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Parababnk.Browsersetup;
 using Parababnk.Pages;
-using Parababnk.Reports;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Parababnk.Tests
 {
-
-    [TestFixture]
-    class Login_Test:Login
+   public class Req_Loan_Test: Req_Loan
     {
+
         string Appurl = "https://parabank.parasoft.com";
-       
-    [Test]
+
+       //[Test]
         public void Login_TC01()
         {
             String[] Browsers = { "Chrome" };
             foreach (String drivers in Browsers)
             {
                 Service.StartBrowser(drivers, Appurl);
+                Req_FORlOan();
 
-                User_Login();             
+
             }
         }
 

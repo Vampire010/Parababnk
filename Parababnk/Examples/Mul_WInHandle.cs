@@ -12,7 +12,7 @@ namespace Parababnk.Examples
     {
         IWebDriver driver;
 
-       // [Test]
+       [Test]
         public void Win()
         {
             driver = new ChromeDriver();
@@ -29,11 +29,12 @@ namespace Parababnk.Examples
             //Parent window
             driver.FindElement(By.XPath("//*[@id='content_wrapper']/section/div[4]/section/div[2]/div[1]/div/div[5]/a/div[3]")).Click();
             Thread.Sleep(5000);
+            //*[@id="content_wrapper"]/section/div[4]/section/div[2]/div[1]/div/div[5]/a/div[3]
 
             //Switching Back to Parent Window 
             driver.SwitchTo().Window(driver.WindowHandles[0]);
             Thread.Sleep(5000);
-
+/*
             //in Parent window clicking About Us link
             driver.FindElement(By.XPath("//*[@id='sdFooter']/div[2]/div[1]/div/div[2]/ul/li[1]/a")).Click();
 
@@ -47,7 +48,7 @@ namespace Parababnk.Examples
             String Produvt_name = P_name.Text;
             Console.WriteLine(Produvt_name);
 
-
+*/
         }
 
     }
