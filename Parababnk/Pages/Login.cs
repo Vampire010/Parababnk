@@ -11,6 +11,7 @@ namespace Parababnk.Pages
 {
     public class Login
     {
+
         ExtentReports rep = ExtentManager.getInstance();
         ExtentTest test;
         
@@ -22,9 +23,9 @@ namespace Parababnk.Pages
             test.Log(Status.Pass, "Page Loaded Successfully");
 
             IWebElement Username = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[1]/input"));
-            
 
-            IWebElement Password = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[2]/input"));            
+            IWebElement Password = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[2]/input")); 
+            
             IWebElement Login_Button = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[3]/input"));
            
             Username.SendKeys("AL202107");

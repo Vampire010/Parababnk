@@ -15,7 +15,7 @@ namespace Parababnk.Tests
     {
         string Appurl = "https://parabank.parasoft.com";
        
-    [Test]
+   // [Test]
         public void Login_TC01()
         {
             String[] Browsers = { "Chrome" };
