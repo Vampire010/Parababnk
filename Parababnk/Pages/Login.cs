@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading;
 using AventStack.ExtentReports;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using Parababnk.Browsersetup;
 using Parababnk.Reports;
 
@@ -21,16 +22,32 @@ namespace Parababnk.Pages
             test = rep.CreateTest("Login_Test");
 
             test.Log(Status.Pass, "Page Loaded Successfully");
+            //ImplicitWait
+            //Service.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5000);
 
+            //WebDriverWait wait = new WebDriverWait(Service.driver, TimeSpan.FromSeconds(5));
             IWebElement Username = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[1]/input"));
 
-            IWebElement Password = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[2]/input")); 
+            IWebElement Password = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[2]/input"));
+            //Explicit Wait
+            //IWebElement Login_Button = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id='loginPanel']/form/div[3]/input")));
+
+            DefaultWait<IWebDriver> fluentWait = new DefaultWait<IWebDriver>(Service.driver);
+
+            fluentWait.Timeout = TimeSpan.FromSeconds(5);
             
-            IWebElement Login_Button = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[3]/input"));
-           
+            fluentWait.PollingInterval = TimeSpan.FromSeconds(250);
+            fluentWait.IgnoreExceptionTypes(typeof(NoSuchElementException));
+           fluentWait.Message = "Element to be NoSuchElementException not found";
+
+
+            IWebElement Login_Button = fluentWait.Until(x=>x.FindElement(By.XPath("//*[@id='loginPanel']/form/div[3]/input")));
+
+
+
             Username.SendKeys("AL202107");
             test.Log(Status.Pass, "UserName Enterd");
-
+           
             Password.SendKeys("Devil@1234");
             test.Log(Status.Pass, "Password Enterd");
 

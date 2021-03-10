@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <OutputType>Exe</OutputType>
+
+    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
     <PackageReference Include="ExtentReports" Version="4.1.0" />
     <PackageReference Include="Microsoft.Edge.SeleniumTools" Version="3.141.2" />
     <PackageReference Include="Noksa.WebDriver.ScreenshotsExtensions" Version="0.1.5.3" />
