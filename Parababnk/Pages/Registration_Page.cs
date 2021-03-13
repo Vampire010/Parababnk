@@ -67,7 +67,7 @@ namespace Parababnk.Pages
             test.Log(Status.Pass, " SSN Number  Enterd" );
             Thread.Sleep(2);
           
-            Username.SendKeys("Devil_260203008");
+            Username.SendKeys("Devil_260203012");
             test.Log(Status.Pass, " USERNAME  Enterd");
             Thread.Sleep(2);
 
@@ -89,6 +89,10 @@ namespace Parababnk.Pages
             else
             {
                 test.Log(Status.Fail, "User Not Registerd ");
+                ITakesScreenshot ts = Service.driver as ITakesScreenshot;
+                Screenshot screenshot = ts.GetScreenshot();
+
+                screenshot.SaveAsFile(@"C:\Users\91973\source\repos\Parababnk\Parababnk\Reports\Registartion.jpeg");
             }
 
             rep.Flush();

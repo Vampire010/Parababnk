@@ -18,7 +18,6 @@ namespace Parababnk.Pages
         
         public void User_Login()
         {
-
             test = rep.CreateTest("Login_Test");
 
             test.Log(Status.Pass, "Page Loaded Successfully");
@@ -38,33 +37,44 @@ namespace Parababnk.Pages
             
             fluentWait.PollingInterval = TimeSpan.FromSeconds(250);
             fluentWait.IgnoreExceptionTypes(typeof(NoSuchElementException));
-           fluentWait.Message = "Element to be NoSuchElementException not found";
+            fluentWait.Message = "Element to be NoSuchElementException not found";
 
 
             IWebElement Login_Button = fluentWait.Until(x=>x.FindElement(By.XPath("//*[@id='loginPanel']/form/div[3]/input")));
 
-
-
-            Username.SendKeys("AL202107");
+            Username.SendKeys("Girish2021");
             test.Log(Status.Pass, "UserName Enterd");
            
-            Password.SendKeys("Devil@1234");
+            Password.SendKeys("Girish010");
             test.Log(Status.Pass, "Password Enterd");
-
 
             Login_Button.Click();
             test.Log(Status.Pass, "Clicking  on Login Button");
 
-            rep.Flush();
-        }
+           // rep.Flush();
 
+            try
+            {
+                IWebElement Usernames = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[1]/input"));
+
+                Usernames.SendKeys("Girish2021");
+
+            }
+
+            catch
+            {
+                ITakesScreenshot ts = Service.driver as ITakesScreenshot;
+                Screenshot screenshot = ts.GetScreenshot();
+
+                screenshot.SaveAsFile(@"C:\Users\91973\source\repos\Parababnk\Parababnk\Reports\Login.jpeg");
+
+            }
+        }
 
         public void Account_Overview()
         {
-
             IWebElement Account_Overview_btn = Service.driver.FindElement(By.XPath("//*[@id='leftPanel']/ul/li[2]/a"));
             Account_Overview_btn.Click();
-
         }
 
     }

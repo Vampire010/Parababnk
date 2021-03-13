@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using Parababnk.Browsersetup;
 using Parababnk.Pages;
+using Parababnk.POM;
 using Parababnk.Reports;
 using System;
 using System.Collections.Generic;
@@ -11,11 +12,11 @@ namespace Parababnk.Tests
 {
 
     [TestFixture]
-    class Login_Test:Login
+    class Login_Test: ReadFromExcelEngine
     {
         string Appurl = "https://parabank.parasoft.com";
        
-   [Test]
+      [Test]
         public void Login_TC01()
         {
             String[] Browsers = { "Chrome" };
@@ -23,7 +24,7 @@ namespace Parababnk.Tests
             {
                 Service.StartBrowser(drivers, Appurl);
 
-                User_Login();             
+                im_Ready();             
             }
         }
 

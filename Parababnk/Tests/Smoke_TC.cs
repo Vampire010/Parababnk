@@ -13,7 +13,8 @@ namespace Parababnk.Tests
     {
         string Appurl = "https://parabank.parasoft.com";
 
-      //  [Test]
+       // [Test, Order(2)]
+
         public void TC01()
         {
             String[] Browsers = { "Chrome" };
@@ -23,10 +24,38 @@ namespace Parababnk.Tests
                 Registration_Page Rp = new Registration_Page();
                 Rp.RG_TC01_POS();
                 Rp.lOGout();
+               
+            }
+        }
+
+        //[Test, Order(1)]
+        //[Ignore("Ignore TCO2")]
+        public void TC02()
+        {
+            String[] Browsers = { "Chrome" };
+            foreach (String drivers in Browsers)
+            {
+                Service.StartBrowser(drivers, Appurl);
+              
                 Login lg = new Login();
                 lg.User_Login();
             }
         }
+
+
+        //[Test, Order(3)]
+        public void TC03()
+        {
+            String[] Browsers = { "Chrome" };
+            foreach (String drivers in Browsers)
+            {
+                Service.StartBrowser(drivers, Appurl);
+
+                Login lg = new Login();
+                lg.User_Login();
+            }
+        }
+
     }
 
 }

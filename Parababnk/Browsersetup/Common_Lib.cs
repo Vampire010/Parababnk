@@ -8,12 +8,15 @@ namespace Parababnk.Browsersetup
     {
 
 
-        public static string Get_Title(string a)
+        public  void Get_Title()
         {
             String Title = Service.driver.Title;
+            
+            if (Title.Equals("PARABANK"))
+
             Console.WriteLine(Title);
-            return a;
-        
+
+
         }
     }
 }
