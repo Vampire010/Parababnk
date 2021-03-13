@@ -7,18 +7,19 @@ namespace Parababnk.POM
     public  class POM_LG
     {
 
-        string Appurl = "https://parabank.parasoft.com";
-        
-     //   [Test]
-        private void Login_TC01()
+
+     // [Test]
+        public void Post_Login_TC01()
         {
-            String[] Browsers = { "Chrome" };
-            foreach (String drivers in Browsers)
-            {
-              
-                Service.StartBrowser(drivers, Appurl);
-                
-            }
+          
+            string Usr = ExcelOperations.ReadData(1, "USERNAME");
+            string Psw = ExcelOperations.ReadData(2, "PASSWORD");
+
+            Console.WriteLine(Usr);
+            Console.WriteLine(Psw);
         }
+
+
+
     }
 }

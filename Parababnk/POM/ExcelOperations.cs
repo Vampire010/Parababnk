@@ -13,14 +13,15 @@ namespace Parababnk.POM
 {
    public class ExcelOperations
     {
-     
 
         // [Test]
         public static DataTable ExcelToDataTable(string Filename)
         {
 
             FileStream stream = File.Open(Filename, FileMode.Open, FileAccess.Read);
+
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
             IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
 
             DataSet result = excelReader.AsDataSet(new ExcelDataSetConfiguration()

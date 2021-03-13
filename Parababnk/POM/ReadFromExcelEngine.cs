@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using CacheLookupAttribute = SeleniumExtras.PageObjects.CacheLookupAttribute;
 using FindsByAttribute = SeleniumExtras.PageObjects.FindsByAttribute;
@@ -17,28 +18,26 @@ namespace Parababnk.POM
     
     public class ReadFromExcelEngine
     {
-       
-
 
         public void im_Ready()
         {
             ExcelOperations.PopulateInCollection(@"C:\Users\91973\source\repos\Parababnk\Parababnk\Reports\TestData.xlsx");
-            string Usr = ExcelOperations.ReadData(1, "USERNAME");
-            string Psw = ExcelOperations.ReadData(2, "PASSWORD");
 
 
-            IWebElement Username = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[1]/input"));
+            for (int i = 1; i <= 5; i++)
+            {
+                string Usr = ExcelOperations.ReadData(i, "USERNAME");
+                Thread.Sleep(2000);
+                string Psw = ExcelOperations.ReadData(i, "PASSWORD");
+                Thread.Sleep(2000);
+                IWebElement Username = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[1]/input"));
+                IWebElement Password = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[2]/input"));
+                IWebElement Login_Button = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[3]/input"));
 
-            IWebElement Password = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[2]/input"));
-            
-            IWebElement Login_Button = Service.driver.FindElement(By.XPath("//*[@id='loginPanel']/form/div[3]/input"));
-
-            Username.SendKeys(Usr);
-
-            Password.SendKeys(Psw);
-
-            Login_Button.Click();
-
+                Username.SendKeys(Usr);
+                Password.SendKeys(Psw);
+                Login_Button.Click();
+            }
         }
      
     }

@@ -24,6 +24,7 @@ namespace Parababnk.Mouse_KeyBoard
             Thread.Sleep(5000);
 
             IWebElement dest = driver.FindElement(By.XPath("//*[@id='amt7']/li"));
+
             Actions act = new Actions(driver);
             act.DragAndDrop(sourse , dest).Perform();
        
