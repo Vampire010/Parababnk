@@ -13,7 +13,8 @@ namespace Parababnk.Mouse_KeyBoard
 class Double_Click
     {
         IWebDriver driver;
-        [Test]
+       
+       // [Test]
         public void DBCLICK()
         {
             driver = new ChromeDriver();
@@ -22,7 +23,9 @@ class Double_Click
             IWebElement ele = driver.FindElement(By.XPath("//*[@id='demo']"));
 
             Actions act = new Actions(driver);
+
             act.DoubleClick(ele).Perform();
+          //  act.
         }
 
 

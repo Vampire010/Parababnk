@@ -14,12 +14,13 @@ namespace Parababnk.Mouse_KeyBoard
     class Drag_Drop
     {
         IWebDriver driver;
-       // [Test]
+     //   [Test]
         public void Drag_Drops()
         {
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("http://demo.guru99.com/test/drag_drop.html");
-            
+            driver.Manage().Window.Maximize();
+
             IWebElement sourse = driver.FindElement(By.XPath("//*[@id='fourth']/a"));
             Thread.Sleep(5000);
 

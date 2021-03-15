@@ -16,15 +16,17 @@ namespace Parababnk.Tests
     {
         string Appurl = "https://parabank.parasoft.com";
        
-      [Test]
+   // [Test]
         public void Login_TC01()
         {
             String[] Browsers = { "Chrome" };
             foreach (String drivers in Browsers)
             {
-                Service.StartBrowser(drivers, Appurl);
+                
+                    Service.StartBrowser(drivers, Appurl);
 
-                im_Ready();             
+                    im_Ready();
+                
             }
         }
 
