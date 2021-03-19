@@ -14,7 +14,7 @@ namespace Parababnk.Mouse_KeyBoard
     class Mouse_Over
     {
         IWebDriver driver;
-       [Test]
+      //// [Test]
         public void RTCLICK()
         {
             driver = new ChromeDriver();

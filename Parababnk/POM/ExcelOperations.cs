@@ -20,7 +20,7 @@ namespace Parababnk.POM
 
             FileStream stream = File.Open(Filename, FileMode.Open, FileAccess.Read);
 
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+          Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
             IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
 
@@ -44,6 +44,7 @@ namespace Parababnk.POM
         public static void PopulateInCollection(string Filename)
         {
             DataTable table = ExcelToDataTable(Filename);
+
             for (int row = 1; row < table.Rows.Count; row++)
             {
                 for (int col = 0; col < table.Columns.Count; col++)
@@ -52,6 +53,7 @@ namespace Parababnk.POM
                     {
                         rowNumber = row,
                         colName = table.Columns[col].ColumnName,
+
                         colValue = table.Rows[row-1][col].ToString()
                     };
                 datacol.Add(dtTable);

@@ -1,9 +1,13 @@
-﻿Feature: SpecFlowFeature1
-	Simple calculator for adding two numbers
-
-@mytag
-Scenario: Add two numbers
-	Given the first number is 40
-	And the second number is 20
-	When the two numbers are added
-	Then the result should be 60
+﻿Feature: ToDoApp
+    Navigate to Parabank Website
+    Login to the Parabank Website
+    
+ 
+@ToDoApp
+Scenario: Login to the Parbank_Site
+    Given that I am on the Parbank_Site
+    Then Enter the Username 
+    Then Enter the Password
+    Then Click on Login_btn    
+    And  verify whether user is logedin
+    Then close the browser instance

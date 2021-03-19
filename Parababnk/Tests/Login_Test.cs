@@ -14,9 +14,9 @@ namespace Parababnk.Tests
     [TestFixture]
     class Login_Test: ReadFromExcelEngine
     {
-        string Appurl = "https://parabank.parasoft.com";
+        string Appurl = "http://mykidsbank.org";
        
-   // [Test]
+    [Test]
         public void Login_TC01()
         {
             String[] Browsers = { "Chrome" };

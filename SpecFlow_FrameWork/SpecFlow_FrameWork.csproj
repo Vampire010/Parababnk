@@ -6,14 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.27.0" />
+    <PackageReference Include="Selenium.Support" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="88.0.4324.9600" />
     <PackageReference Include="SpecFlow" Version="3.7.13" />
-    <PackageReference Include="SpecFlow.NUnit" Version="3.7.13" />
     <PackageReference Include="SpecRun.SpecFlow" Version="3.7.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="hjh\" />
-    <Folder Include="Step_Def\" />
   </ItemGroup>
 
 </Project>
