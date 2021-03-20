@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlow_FrameWork", "SpecFlow_FrameWork\SpecFlow_FrameWork.csproj", "{87365443-1A2E-4E94-8958-09422DC440FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlow_FrameWork", "..\..\..\Downloads\Parababnk-master\SpecFlow_FrameWork\SpecFlow_FrameWork.csproj", "{4AFFD50A-1718-43A5-9FEF-A8583678779A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +22,10 @@ Global
 		{5EE00752-413D-4F61-B019-C1B7A9310335}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EE00752-413D-4F61-B019-C1B7A9310335}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EE00752-413D-4F61-B019-C1B7A9310335}.Release|Any CPU.Build.0 = Release|Any CPU
-		{87365443-1A2E-4E94-8958-09422DC440FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87365443-1A2E-4E94-8958-09422DC440FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87365443-1A2E-4E94-8958-09422DC440FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87365443-1A2E-4E94-8958-09422DC440FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AFFD50A-1718-43A5-9FEF-A8583678779A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AFFD50A-1718-43A5-9FEF-A8583678779A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AFFD50A-1718-43A5-9FEF-A8583678779A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AFFD50A-1718-43A5-9FEF-A8583678779A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

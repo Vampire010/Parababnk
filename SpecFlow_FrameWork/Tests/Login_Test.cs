@@ -8,7 +8,7 @@ namespace SpecFlow_FrameWork.Tests
 {
     class Login_Test
     {
-        [Test]
+       // [Test]
         public void Test1()
         {
             ToDoAppSteps apptest =new  ToDoAppSteps();

@@ -17,7 +17,7 @@ namespace Parababnk.Tests
    public  class Registration_Test : Registration_Page
     {
 
-      //[Test]
+      [Test]
         public void Register_User()
         {
 
